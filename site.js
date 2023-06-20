@@ -35,7 +35,7 @@ async function randomPicSum() {
                 })
                 .then(url => {
                     console.log(url);
-                    photo_preview.src = url
+                    document.getElementById('show_photo').src = url
                 })
         })
 }
@@ -43,5 +43,10 @@ async function randomPicSum() {
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
-const photo_preview = document.getElementById('show_photo');
+
+function copyToClipBoard(){
+    let input_url = document.getElementById('photo-url');
+    input_url.select();
+    navigator.clipboard.writeText(input_url.value);
+}
 randomPicSum()
