@@ -4,8 +4,14 @@
     "description": "Get a random fake photo",
     "manifest_version": 3,
     "author": "Khoa Nguyen",
-    "action":{
+    "action": {
         "default_popup": "index.html",
         "default_title": "Fake Random Photo"
+    },
+    "icons": {
+        "16": "/asset/images/icon.png",
+        "32": "/asset/images/icon.png",
+        "48": "/asset/images/icon.png",
+        "128": "/asset/images/icon.png"
     }
 }

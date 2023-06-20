@@ -19,24 +19,25 @@
                     </div>
                     <div class="form-checkbox mr-2">
                         <label>Product</label>
-                        <input type="radio" name="random-photo" id="product">
+                        <input type="radio" name="random-photo" id="product" >
                     </div>
                     <div class="form-checkbox mr-2">
-                        <label>Avatar</label>
+                        <label>Photo</label>
                         <input type="radio" name="random-photo" id="photo">
                     </div>
                 </div>
                 <div class="">
-                    <button class="btn btn-dark btn-sm" onclick="randomPicSum()">Get Photo</button>
+                    <button class="btn btn-dark btn-sm" id="btnGetPhoto">Get Photo</button>
                 </div>
             </div>
         </div>
         <div class="row">            
             <div class="photo-detail">
                 <input type="url" class="form-control" id="photo-url">
-                <button class="btn btn-danger btn-sm ml-2" onclick="copyToClipBoard()">Copy</button>
+                <button class="btn btn-danger btn-sm ml-2" id="btnCopy">Copy</button>
             </div>
             <div class="photo-preview">
+                <p class="d-none">Loading....</p>
                 <img id="show_photo" src="" alt="">
             </div>
         </div>
