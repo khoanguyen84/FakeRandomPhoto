@@ -1,0 +1,11 @@
+{
+    "name": "Fake Random Photo",
+    "version": "1.0.0",
+    "description": "Get a random fake photo",
+    "manifest_version": 3,
+    "author": "Khoa Nguyen",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Fake Random Photo"
+    }
+}
