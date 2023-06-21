@@ -54,7 +54,7 @@ function randomAvatar() {
 }
 
 function changeType() {
-    let type = document.getElementById('avatar').checked ? 1 : document.getElementById('product').checked ? 2 : 3;
+    let type = document.getElementById('avatar').checked ? AVATAR : document.getElementById('product').checked ? PRODUCT : PHOTO;
     switch (type) {
         case AVATAR: {
             randomAvatar();
