@@ -47,9 +47,10 @@ function copyToClipBoard() {
 }
 
 function randomAvatar() {
-    let avatarId = randomNumber(1, 70);
-    document.getElementById('photo-url').value = `https://i.pravatar.cc/150?img=${avatarId}`;
-    document.getElementById('show_photo').src = `https://i.pravatar.cc/150?img=${avatarId}`;
+    let avatarId = randomNumber(1, 1249);
+    let avatarUrl = `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${avatarId}.jpg`
+    document.getElementById('photo-url').value = avatarUrl;
+    document.getElementById('show_photo').src = avatarUrl;
 }
 
 function changeType() {
@@ -60,6 +61,7 @@ function changeType() {
             break;
         }
         case PRODUCT: {
+            randomProduct();
             break;
         }
         case PHOTO: {
@@ -69,11 +71,29 @@ function changeType() {
     }
 }
 
-document.getElementById('avatar').addEventListener("change", changeType);
-document.getElementById('product').addEventListener("change", changeType);
-document.getElementById('photo').addEventListener("change", changeType);
-document.getElementById('btnGetPhoto').addEventListener("click", changeType);
-document.getElementById('btnCopy').addEventListener("click", copyToClipBoard);
+function randomProduct() {
+    document.querySelector('.photo-preview>p').classList?.remove('d-none');
+    document.querySelector('.photo-preview>img').classList?.add('d-none');
+    fetch(`https://fakestoreapi.com/products`)
+        .then(res => res.json())
+        .then(data => {
+            let randomId = randomNumber(1, 20);
+            let photo = data.filter((item) => item.id == randomId);
 
-changeType()
+            document.querySelector('.photo-preview>p').classList?.add('d-none');
+            document.querySelector('.photo-preview>img').classList?.remove('d-none');
+            document.getElementById('show_photo').src = photo[0].image;
+        })
+}
 
+function init() {
+    document.getElementById('avatar').addEventListener("change", changeType);
+    document.getElementById('product').addEventListener("change", changeType);
+    document.getElementById('photo').addEventListener("change", changeType);
+    document.getElementById('btnGetPhoto').addEventListener("click", changeType);
+    document.getElementById('btnCopy').addEventListener("click", copyToClipBoard);
+
+    changeType()
+}
+
+init();
