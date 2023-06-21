@@ -1,8 +1,8 @@
 # Random Fake Photo
 
-# Help get random image (Avatar, Product, Photo)
+## Help get random image (Avatar, Product, Photo)
 
-# How to use?
+## How to use?
 1. Clone source from https://github.com/khoanguyen84/FakeRandomPhoto.git
 2. Open Chrome
 3. Click on Customize and control goole Chrome on the top right browser -> Click on setting
