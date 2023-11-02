@@ -47,8 +47,11 @@ function copyToClipBoard() {
 }
 
 function randomAvatar() {
-    let avatarId = randomNumber(1, 1249);
-    let avatarUrl = `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${avatarId}.jpg`
+    // let avatarId = randomNumber(1, 1249);
+    // let avatarUrl = `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${avatarId}.jpg`
+    let avatarId = randomNumber(1, 99);
+    let type = randomNumber(1,2) == 1 ? 'men' : 'women'
+    let avatarUrl = `https://randomuser.me/api/portraits/${type}/${avatarId}.jpg`
     document.getElementById('photo-url').value = avatarUrl;
     document.getElementById('show_photo').src = avatarUrl;
 }
